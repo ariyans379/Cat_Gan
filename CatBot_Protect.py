@@ -4,14 +4,16 @@
 import LINETCR
 from LINETCR.lib.curve.ttypes import *
 from datetime import datetime
-import time,random,sys,json,codecs,threading,glob,re,ast,os,subprocess,wikipedia,goslate
-import bs4
-import ast
-import requests,json,urllib
-import html5lib
-from random import randint
+import time,random,sys,json,codecs,threading,glob,requests,urllib
 from bs4 import BeautifulSoup
 from gtts import gTTS
+import requests
+import shutil
+import time
+import json
+import html5lib
+import wikipedia
+import goslate
 
 cl = LINETCR.LINE()
 cl.login(token='EmHCNHLKXReR3GUduca1.UlrDCGkj7dxSpRrrWVSpKq.g3vEaSk5iGVvPWOhpgRVkHPpLhOOwoso1OQ5i+27Iuw=')
