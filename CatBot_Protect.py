@@ -37,11 +37,24 @@ kc.login(token='Em8Uj1MRqCDmBO5XiYu5.T2Obu6kd2POuq9/WqXGtnq.Eaqof4oV8GKOTFkpRESn
 kc.loginResult()
 print "Kc-Login Success\n"
 
+ks = LINETCR.LINE()
+ks.login(token='EmwVS4A5cErcj6NZ939e.uHwIvq3v1iyKQZqnNrhKFG.vllaB0gxYptn8mEr+F0b1/+TSN46FCfTV5Qtm/fEXig=')
+#kk.login(token='')
+ks.loginResult()
+print "Kk-Login Success\n"
+
+kt = LINETCR.LINE()
+kt.login(token='EmwVS4A5cErcj6NZ939e.uHwIvq3v1iyKQZqnNrhKFG.vllaB0gxYptn8mEr+F0b1/+TSN46FCfTV5Qtm/fEXig=')
+#kk.login(token='')
+kt.loginResult()
+print "Kk-Login Success\n"
+
 kr = LINETCR.LINE()
 kr.login(token='EmLV5twOWfR6ybWCUO0b.sDTrH/zMSMOdJJyRwe3qQW.eJvaeOQigQYb4ukESxrJdzaTHRe1I9LExmgCz5WfzJ4=')
 #kr.login(token='')
 kr.loginResult()
 print "Kr-Login Success\n\n=====[Sukses All Login]====="
+
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -135,12 +148,15 @@ helpMessage ="""
 Owner Team Boruto Bot 『AanJutawan』
 """
 
-KAC=[cl,ki,kk,kc]
+KAC=[cl,ki,kk,kc,ks,kt]
+DEF=[ki,kk,kc,ks,kt]
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
 Cmid = kc.getProfile().mid
-Bots=[mid,Amid,Bmid,Cmid]
+Dmid = ks.getProfile().mid
+Emid = kt.getProfile().mid
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid]
 Creator="ub76a0153a283da9a1443dfb043181335"
 admin=["ub76a0153a283da9a1443dfb043181335","ube597dd17603406a6b278bc62cc5fdcf"]
 
@@ -184,6 +200,41 @@ mybackup.displayName = contact.displayName
 mybackup.statusMessage = contact.statusMessage
 mybackup.pictureStatus = contact.pictureStatus
 
+contact = cl.getProfile()
+backup = cl.getProfile()
+backup.displayName = contact.displayName
+backup.statusMessage = contact.statusMessage
+backup.pictureStatus = contact.pictureStatus
+
+contact = ki.getProfile()
+backup = ki.getProfile()
+backup.displayName = contact.displayName
+backup.statusMessage = contact.statusMessage
+backup.pictureStatus = contact.pictureStatus
+
+contact = kk.getProfile()
+backup = kk.getProfile()
+backup.displayName = contact.displayName
+backup.statusMessage = contact.statusMessage
+backup.pictureStatus = contact.pictureStatus
+
+contact = kc.getProfile()
+backup = kc.getProfile()
+backup.displayName = contact.displayName
+backup.statusMessage = contact.statusMessage
+backup.pictureStatus = contact.pictureStatus
+
+contact = ks.getProfile()
+backup = ks.getProfile()
+backup.displayName = contact.displayName
+backup.statusMessage = contact.statusMessage
+backup.pictureStatus = contact.pictureStatus
+
+contact = kt.getProfile()
+backup = kt.getProfile()
+backup.displayName = contact.displayName
+backup.statusMessage = contact.statusMessage
+backup.pictureStatus = contact.pictureStatus
 
 def mention(to, nama):
 	aa = ""
@@ -343,7 +394,27 @@ def bot(op):
 		    kc.acceptGroupInvitation(op.param1)
             if op.param3 in Cmid:
 		if op.param2 in Bmid:
-		    kc.acceptGroupInvitation(op.param1)
+		    kc.acceptGroupInvitation(op.param1)		
+#--------------------------------------------------------
+            if op.param3 in Dmid:
+		if op.param2 in mid:
+		    ks.acceptGroupInvitation(op.param1)
+            if op.param3 in Dmid:
+		if op.param2 in Amid:
+		    ks.acceptGroupInvitation(op.param1)
+            if op.param3 in Dmid:
+		if op.param2 in Bmid:
+		    ks.acceptGroupInvitation(op.param1)
+#--------------------------------------------------------
+            if op.param3 in Emid:
+		if op.param2 in mid:
+		    kt.acceptGroupInvitation(op.param1)
+            if op.param3 in Emid:
+		if op.param2 in Amid:
+		    kt.acceptGroupInvitation(op.param1)
+            if op.param3 in Emid:
+		if op.param2 in Bmid:
+		    kt.acceptGroupInvitation(op.param1)
 #--------------------------------------------------------
 	    if mid in op.param3:
                 if wait["AutoJoin"] == True:
